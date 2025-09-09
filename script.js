@@ -1,6 +1,7 @@
 let currentSlide = 0;
 const photos = ["images/photo1.jpg", "images/photo2.jpg", "images/photo3.jpg"];
 const slideshow = document.getElementById("slideshow");
+const music = document.getElementById("bg-music");
 
 // Countdown Logic
 let timeLeft = 10;
@@ -12,6 +13,7 @@ const timer = setInterval(() => {
   if (timeLeft <= 0) {
     clearInterval(timer);
     showPage("wishPage");
+    playMusic(); // 🎶 yahan music start hoga
   }
 }, 1000);
 
@@ -49,14 +51,13 @@ function typeLetter() {
   }, 50);
 }
 
-// Music Autoplay Fix
-window.addEventListener("load", () => {
-  const music = document.getElementById("bg-music");
+// 🎶 Music Play function
+function playMusic() {
   music.volume = 0.5;
   music.play().catch(() => {
-    // Fallback trick
+    // agar autoplay block ho jaye toh pehle click pe chalu hoga
     document.body.addEventListener("click", () => {
       music.play();
     }, { once: true });
   });
-});
+}
