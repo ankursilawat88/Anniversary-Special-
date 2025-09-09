@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.page {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(-45deg, #ff758c, #ff7eb3, #6a82fb, #00c6ff);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: #fff;
+  position: relative;
+}
+
+.page.active {
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Countdown */
+.countdown-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+#countdown {
+  font-size: 5rem;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); color: yellow; }
+  100% { transform: scale(1); }
+}
+
+/* Wish Page */
+.wish-text {
+  font-size: 2.5rem;
+  animation: fadeIn 2s ease forwards;
+}
+.sub-text {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 3s ease 2s forwards;
+}
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #fff;
+  color: #ff4b5c;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  transform: scale(1.1);
+  background: #ffe3e3;
+}
+
+/* Slideshow */
+.slideshow-container img {
+  width: 70%;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  animation: fadeIn 2s ease;
+}
+
+/* Letter */
+.letter-container {
+  padding: 20px;
+  width: 70%;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* Final Page */
+.final-text {
+  font-size: 3rem;
+  animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff4b5c; }
+  to { text-shadow: 0 0 30px #fff; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

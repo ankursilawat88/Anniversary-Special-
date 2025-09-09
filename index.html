@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Special Day</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Music -->
+  <audio id="bg-music" src="music.mp3" autoplay loop></audio>
+
+  <!-- Countdown Page -->
+  <section id="countdownPage" class="page active">
+    <div class="countdown-container">
+      <h1>⏳ Our Special Moment In...</h1>
+      <div id="countdown">10</div>
+    </div>
+  </section>
+
+  <!-- Wish Page -->
+  <section id="wishPage" class="page">
+    <div class="wish-container">
+      <h1 class="wish-text">🎉 Happy 1st Meeting Anniversary My Jaana ❤️ 🎉</h1>
+      <p class="sub-text">Thank you for making my life magical ✨</p>
+      <button onclick="showPage('photosPage')">See More Moments</button>
+    </div>
+  </section>
+
+  <!-- Photos Page -->
+  <section id="photosPage" class="page">
+    <div class="slideshow-container">
+      <img id="slideshow" src="images/photo1.jpg" alt="Our Moments" />
+    </div>
+    <button onclick="showPage('letterPage')">One Last Thing</button>
+  </section>
+
+  <!-- Letter Page -->
+  <section id="letterPage" class="page">
+    <div class="letter-container">
+      <p id="letterText"></p>
+    </div>
+    <button onclick="showPage('finalPage')">Final Surprise</button>
+  </section>
+
+  <!-- Final Page -->
+  <section id="finalPage" class="page">
+    <div class="final-container">
+      <h1 class="final-text">I Love You Forever ❤️</h1>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
